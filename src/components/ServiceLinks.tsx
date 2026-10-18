@@ -12,7 +12,11 @@ const services = [
   {
     name: 'bobbin',
     href: 'https://bobbin.aly.town',
-    description: 'indie appview for tangled.',
+    description: (
+      <>
+        indie appview for <a href="https://tangled.org">tangled</a>.
+      </>
+    ),
   },
   {
     name: 'haunt.at',
@@ -32,7 +36,11 @@ const services = [
   {
     name: 'skytrace',
     href: 'https://skytrace.aly.town',
-    description: 'public moderation explorer for bsky.',
+    description: (
+      <>
+        public moderation explorer for <a href="https://bsky.app">bsky</a>.
+      </>
+    ),
   },
   {
     name: 'slingshot',
@@ -42,26 +50,35 @@ const services = [
   {
     name: 'snarled',
     href: 'https://snarled.at',
-    description: 'wip indie client for tangled.',
+    description: (
+      <>
+        wip indie client for <a href="https://tangled.org">tangled</a>.
+      </>
+    ),
   },
 ];
 
 export function ServiceLinks() {
   return (
     <nav aria-label="Apps and services" className="mt-8">
-      <ul className="space-y-5">
+      <ul className="space-y-5 lg:columns-2">
         {services.map(({ name, href, description }) => (
-          <li key={href}>
+          <li key={href} className="break-inside-avoid-column">
             <a
               href={href}
-              className="rounded-sm text-ctp-blue underline decoration-ctp-surface2 underline-offset-4 hover:text-ctp-sapphire focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ctp-mauve"
+              className="border-b border-ctp-surface2 text-ctp-blue hover:text-ctp-sapphire"
             >
               {name}
-              <span aria-hidden="true" className="ml-2">
+              <span
+                aria-hidden="true"
+                className="ml-1 align-super text-[0.65em]"
+              >
                 ↗
               </span>
             </a>
-            <p className="mt-1 text-sm text-ctp-subtext0">{description}</p>
+            <p className="mt-1 text-sm text-ctp-subtext0 [&_a]:underline">
+              {description}
+            </p>
           </li>
         ))}
       </ul>
