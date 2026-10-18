@@ -56,6 +56,15 @@ const services = [
       </>
     ),
   },
+  {
+    name: 'tg',
+    href: 'https://tgcli.wisp.place',
+    description: (
+      <>
+        cli client + mcp server for <a href="https://tangled.org">tangled</a>.
+      </>
+    ),
+  },
 ];
 
 export function ServiceLinks() {
