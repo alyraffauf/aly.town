@@ -1,5 +1,5 @@
 import { Footer } from './components/Footer';
-import { ServiceLinks } from './components/ServiceLinks';
+import { Links } from './components/Links';
 
 export function App() {
   return (
@@ -14,7 +14,7 @@ export function App() {
         />
         <h1 className="text-ctp-mauve">aly.town</h1>
         <p className="text-ctp-subtext0">atmosphere apps & services.</p>
-        <ServiceLinks />
+        <Links />
       </main>
       <Footer />
     </>

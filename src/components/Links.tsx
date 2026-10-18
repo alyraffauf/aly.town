@@ -1,4 +1,6 @@
-const services = [
+import { Link } from './Link';
+
+const links = [
   {
     name: 'aly.social',
     href: 'https://aly.social',
@@ -67,28 +69,12 @@ const services = [
   },
 ];
 
-export function ServiceLinks() {
+export function Links() {
   return (
     <nav aria-label="Apps and services" className="mt-8">
       <ul className="space-y-5 lg:columns-2">
-        {services.map(({ name, href, description }) => (
-          <li key={href} className="break-inside-avoid-column">
-            <a
-              href={href}
-              className="border-b border-ctp-surface2 text-ctp-blue hover:text-ctp-sapphire"
-            >
-              {name}
-              <span
-                aria-hidden="true"
-                className="ml-1 align-super text-[0.65em]"
-              >
-                ↗
-              </span>
-            </a>
-            <p className="mt-1 text-sm text-ctp-subtext0 [&_a]:underline">
-              {description}
-            </p>
-          </li>
+        {links.map(({ name, href, description }) => (
+          <Link key={href} name={name} href={href} description={description} />
         ))}
       </ul>
     </nav>
